@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Sekolah Digital - Platform Manajemen Terpadu</title>
+    <meta name="description" content="Aplikasi manajemen sekolah real-time dengan multi-role dan penyimpanan Google Spreadsheet & Drive." />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Standalone & Lucide Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Library Export Excel & PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- FILE 3: Stylesheet Glassmorphism & Layout -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+    <!-- Indikator Status Sinkronisasi Spreadsheet & Drive -->
+    <div id="cloud-sync-indicator" class="cloud-badge" style="display:none;">
+      <span id="cloud-sync-dot" class="cloud-dot"></span>
+      <span id="cloud-sync-text">Tersinkron ke Spreadsheet</span>
+    </div>
+
+    <!-- Container Utama Aplikasi -->
+    <div id="root"></div>
+
+    <!-- FILE 4: Mesin Sinkronisasi Spreadsheet & Drive -->
+    <script src="./cloud-sync.js"></script>
+
+    <!-- FILE 5: Aplikasi Utama Sekolah Digital -->
+    <script src="./app.js"></script>
+  </body>
+</html>
